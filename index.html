@@ -1,46 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klick Jobs | Job Search</title>
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Klick | Job Search</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="site-header">
-        <div class="container header-iner">
-            <a class="logo" href="#/">Klick Jobs</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#/">Klick Jobs</a>
 
-            <nav class="nav" aria-label="Main navigation">
-                <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Toggle menu">☰</button>
-                <ul id="nav-list" class="nav-list">
-                    <li><a href="#/">Jobs</a></li>
-                    <li><a href="#/saved">Saved</a></li>
-                    <li><a href="#/about">About</a></li>
-                </ul>
-            </nav>
+      <nav class="nav" aria-label="Main navigation">
+        <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Toggle menu">☰</button>
+        <ul id="nav-list" class="nav-list">
+          <li><a href="#/">Jobs</a></li>
+          <li><a href="#/saved">Saved</a></li>
+          <li><a href="#/about">About</a></li>
+        </ul>
+      </nav>
 
-            <div>
-                <button id="theme-toggle" class="btn small" aria-pressed="false" title="Toggle dark mode">🌙</button>
-            </div>
-        </div>
-    </header>
-
-    <main id="app">
-        <!-- Router will inject views here-->
-    </main>
-
-      <!-- JOB MODAL (reused) -->
-    <div id="job-modal" class="modal" role="dialog" aria-hidden="true" aria-labelledby="job-modal-title">
-        <div class="modal-backdrop" data-close></div>
-        <div class="modal-panel" role="document" aria-modal="true">
-        <button class="modal-close" aria-label="Close" data-close>✕</button>
-        <article id="job-modal-content" tabindex="-1"></article>
-        </div>
+      <div class="header-actions">
+        <button id="theme-toggle" class="btn small" aria-pressed="false" title="Toggle dark mode">🌙</button>
+      </div>
     </div>
+  </header>
 
-    <script src="js/main.js" type="module"></script>
+  <main id="app">
+    <!-- Router will inject views here -->
+  </main>
+
+  <!-- JOB MODAL (reused) -->
+  <div id="job-modal" class="modal" role="dialog" aria-hidden="true" aria-labelledby="job-modal-title">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="document" aria-modal="true">
+      <button class="modal-close" aria-label="Close" data-close>✕</button>
+      <article id="job-modal-content" tabindex="-1"></article>
+    </div>
+  </div>
+
+  <script src="js/main.js" type="module"></script>
 </body>
 </html>
