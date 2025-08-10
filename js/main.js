@@ -504,3 +504,21 @@ function removeSavedJob(id){
   const ids = JSON.parse(localStorage.getItem(LS_SAVED) || '[]').filter(x => x !== id);
   localStorage.setItem(LS_SAVED, JSON.stringify(ids));
 }
+
+
+/* ----------------- Utilities ------------------ */
+function truncate(str, n=100){
+  if (!str) return '';
+  return str.length > n ? str.slice(0,n-1) + '…' : str;
+}
+function escapeHtml(s){
+  if (!s) return '';
+  return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
+}
+function debounce(fn, wait=150){
+  let t;
+  return (...args) => {
+    clearTimeout(t);
+    t = setTimeout(()=> fn.apply(this,args), wait);
+  };
+}
