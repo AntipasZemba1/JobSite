@@ -218,3 +218,37 @@ function populateFilterOptions(){
   const types = Array.from(new Set(JOBS.map(j => j.type))).sort();
   typeSel.innerHTML = `<option value="">Any</option>` + types.map(t => `<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`).join('');
 }
+
+function hookHomeEvents(){
+  const searchEl = byId('search');
+  const locEl = byId('filter-location');
+  const typeEl = byId('filter-type');
+  const sortEl = byId('sort-by');
+  const clearEl = byId('clear-filters');
+  const loadMoreBtn = byId('load-more');
+
+  searchEl.addEventListener('input', debounce((e)=>{
+    searchQ = e.target.value.trim().toLowerCase();
+    visibleCount = PAGE_SIZE;
+    applyFiltersAndRender();
+  }, 200));
+
+  locEl.addEventListener('change', (e)=>{ locationFilter = e.target.value; visibleCount = PAGE_SIZE; applyFiltersAndRender(); });
+  typeEl.addEventListener('change', (e)=>{ typeFilter = e.target.value; visibleCount = PAGE_SIZE; applyFiltersAndRender(); });
+  sortEl.addEventListener('change', (e)=>{ sortBy = e.target.value; visibleCount = PAGE_SIZE; applyFiltersAndRender(); });
+
+  clearEl.addEventListener('click', ()=>{
+    searchQ = ''; locationFilter=''; typeFilter=''; sortBy='newest'; activeTagFilters.clear(); visibleCount = PAGE_SIZE;
+    byId('search').value = '';
+    byId('filter-location').value = '';
+    byId('filter-type').value = '';
+    byId('sort-by').value = 'newest';
+    renderActiveChips();
+    applyFiltersAndRender();
+  });
+
+  loadMoreBtn.addEventListener('click', () => {
+    visibleCount += PAGE_SIZE;
+    applyFiltersAndRender();
+  });
+}
