@@ -345,3 +345,16 @@ function renderJobPage(id){
     setTimeout(()=>{ /* give router time */ renderHomePage(); document.querySelector('#search')?.focus(); renderActiveChips(); applyFiltersAndRender(); }, 80);
   }));
 }
+
+/* --------- About page ---------- */
+function renderAboutPage(){
+  app.innerHTML = `
+    <section class="page">
+      <div class="container">
+        <h1>About JobFinder</h1>
+        <p class="muted">This is an advanced front-end prototype of a job board built with plain HTML/CSS/JS. It demonstrates filtering, local persistence, offline caching, and client-side routing.</p>
+        <p style="margin-top:18px"><a class="btn" href="#/">Browse jobs</a></p>
+      </div>
+    </section>
+  `;
+}
