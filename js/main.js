@@ -358,3 +358,67 @@ function renderAboutPage(){
     </section>
   `;
 }
+
+/* ----------------- Filtering and rendering jobs ------------------ */
+function applyFiltersAndRender(){
+  const grid = byId('jobs-grid');
+  if (!grid) return;
+
+  let filtered = JOBS.filter(job => {
+    const text = `${job.title} ${job.company} ${job.description} ${(job.tags||[]).join(' ')}`.toLowerCase();
+    if (searchQ && !text.includes(searchQ)) return false;
+    if (locationFilter && job.location !== locationFilter) return false;
+    if (typeFilter && job.type !== typeFilter) return false;
+    if (activeTagFilters.size) {
+      const has = [...activeTagFilters].every(tag => (job.tags||[]).includes(tag));
+      if (!has) return false;
+    }
+    return true;
+  });
+
+  // sort
+  if (sortBy === 'title-asc') filtered.sort((a,b)=> a.title.localeCompare(b.title));
+  else filtered.sort((a,b)=> new Date(b.postedAt) - new Date(a.postedAt));
+
+  const total = filtered.length;
+  const slice = filtered.slice(0, visibleCount);
+
+  // render
+  byId('result-count').textContent = `${total} result${total !== 1 ? 's' : ''}`;
+  grid.innerHTML = slice.map(j => renderCardHtml(j)).join('');
+
+  // tag click hooks and view/apply/save
+  grid.querySelectorAll('.tag').forEach(el => {
+    el.addEventListener('click', (e) => {
+      const t = e.currentTarget.dataset.tag;
+      activeTagFilters.add(t);
+      renderActiveChips();
+      visibleCount = PAGE_SIZE;
+      applyFiltersAndRender();
+      // scroll to top of results
+      window.scrollTo({top: document.querySelector('.jobs-wrap').offsetTop - 80, behavior:'smooth'});
+    });
+  });
+
+  grid.querySelectorAll('[data-action="view"]').forEach(b => {
+    b.addEventListener('click', (e) => {
+      const id = e.currentTarget.dataset.id;
+      location.hash = `#/job/${id}`;
+    });
+  });
+  grid.querySelectorAll('[data-action="save"]').forEach(b => {
+    b.addEventListener('click', (e) => {
+      const id = e.currentTarget.dataset.id;
+      toggleSave(id);
+      // re-render to update button text
+      applyFiltersAndRender();
+    });
+  });
+
+  // show/hide load more
+  const loadMore = byId('load-more');
+  if (visibleCount >= total) loadMore.style.display = 'none';
+  else loadMore.style.display = 'inline-block';
+
+  renderActiveChips();
+}
