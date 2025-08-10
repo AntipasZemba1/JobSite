@@ -252,3 +252,38 @@ function hookHomeEvents(){
     applyFiltersAndRender();
   });
 }
+
+/* --------- Saved page ---------- */
+function renderSavedPage(){
+  const saved = getSavedJobs();
+  app.innerHTML = `
+    <section class="page">
+      <div class="container">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <h1>Saved jobs</h1>
+          <a class="btn" href="#/">Browse</a>
+        </div>
+
+        <div style="margin-top:18px">
+          ${saved.length ? `<div class="jobs-grid" id="saved-grid">${saved.map(j => renderCardHtml(j)).join('')}</div>` : `<div class="empty-state"><h3>No saved jobs</h3><p class="muted">Click the Save button on any job to add it here.</p></div>`}
+        </div>
+      </div>
+    </section>
+  `;
+
+  // hook save/remove buttons
+  const removeBtns = document.querySelectorAll('[data-action="unsave"]');
+  removeBtns.forEach(b => b.addEventListener('click', (e) => {
+    const id = e.currentTarget.dataset.id;
+    removeSavedJob(id);
+    renderSavedPage();
+  }));
+
+  // hook view details on saved list
+  document.querySelectorAll('[data-action="view"]').forEach(b => {
+    b.addEventListener('click', (e) => {
+      const id = e.currentTarget.dataset.id;
+      location.hash = `#/job/${id}`;
+    });
+  });
+}
