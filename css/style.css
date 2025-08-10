@@ -88,3 +88,21 @@ body{
 .btn.small{padding:6px 8px;font-size:0.95rem}
 .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;border:0}
 .btn.ghost{background:transparent;border:1px solid rgba(15,23,42,0.06)}
+
+
+/* main layout / hero */
+.hero{
+  padding:40px 0 18px 0;
+}
+.hero-inner{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  justify-content:space-between;
+}
+.hero h1{
+  font-family:"Poppins",sans-serif;
+  font-size:2.1rem;
+  margin:0 0 8px;
+}
+.lead{color:var(--muted); margin:0 0 14px}
