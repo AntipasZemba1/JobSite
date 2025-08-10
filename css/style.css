@@ -106,3 +106,15 @@ body{
   margin:0 0 8px;
 }
 .lead{color:var(--muted); margin:0 0 14px}
+
+
+/* content layout for jobs page */
+.page{
+  padding:20px 0 60px;
+}
+.jobs-wrap{
+  display:grid;
+  grid-template-columns:320px 1fr;
+  gap:24px;
+  align-items:start;
+}
