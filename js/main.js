@@ -67,3 +67,36 @@ async function ensureJobs(){
     hideFullScreenSkeleton();
   }
 }
+
+/* ----------------- HEADER & theme ------------------ */
+function hookHeader(){
+  // nav toggle (mobile)
+  if (navToggle()) {
+    navToggle().addEventListener('click', () => {
+      const expanded = navToggle().getAttribute('aria-expanded') === 'true';
+      navToggle().setAttribute('aria-expanded', String(!expanded));
+      navList().classList.toggle('show');
+    });
+  }
+
+  // theme
+  const tbtn = themeToggle();
+  const saved = localStorage.getItem(LS_THEME) || 'light';
+  setTheme(saved);
+  if (tbtn){
+    tbtn.addEventListener('click', () => {
+      const cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const next = cur === 'dark' ? 'light' : 'dark';
+      setTheme(next);
+    });
+  }
+}
+function setTheme(t){
+  document.documentElement.setAttribute('data-theme', t === 'dark' ? 'dark' : 'light');
+  localStorage.setItem(LS_THEME, t);
+  const btn = themeToggle();
+  if (btn) {
+    btn.setAttribute('aria-pressed', String(t === 'dark'));
+    btn.textContent = t === 'dark' ? 'Light' : 'Dark';
+  }
+}
