@@ -131,3 +131,78 @@ function hideFullScreenSkeleton(){
   // noop; subsequent render will replace content
 }
 
+/* --------- HOME PAGE (jobs list) ---------- */
+function renderHomePage(){
+  // build UI skeleton
+  app.innerHTML = `
+    <section class="page">
+      <div class="container">
+        <div class="hero">
+          <div class="hero-inner">
+            <div class="hero-content">
+              <h1>Find your next great job</h1>
+              <p class="lead muted">Curated roles. Fast filtering. Save your favorites.</p>
+            </div>
+            <div>
+              <a class="btn primary" href="#/saved">View saved</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="jobs-wrap" style="margin-top:18px">
+          <aside class="filters" id="filters-pane">
+            <div class="filter-group">
+              <label for="search">Search</label>
+              <input id="search" class="input" type="search" placeholder="Keyword, title or company" />
+            </div>
+
+            <div class="filter-group">
+              <label>Active filters</label>
+              <div class="active-chips" id="active-chips"></div>
+            </div>
+
+            <div class="filter-group">
+              <label for="filter-location">Location</label>
+              <select id="filter-location" class="input"><option value="">Anywhere</option></select>
+            </div>
+
+            <div class="filter-group">
+              <label for="filter-type">Job Type</label>
+              <select id="filter-type" class="input"><option value="">Any</option></select>
+            </div>
+
+            <div class="filter-group">
+              <label for="sort-by">Sort</label>
+              <select id="sort-by" class="input">
+                <option value="newest">Newest</option>
+                <option value="title-asc">Title A→Z</option>
+              </select>
+            </div>
+
+            <div class="filter-actions">
+              <button id="clear-filters" class="btn">Clear</button>
+            </div>
+          </aside>
+
+          <section style="flex:1">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+              <h2>Open positions</h2>
+              <div class="result-count muted" id="result-count">—</div>
+            </div>
+
+            <div id="jobs-grid" class="jobs-grid" role="list" aria-live="polite"></div>
+
+            <div style="margin-top:14px;display:flex;justify-content:center">
+              <button id="load-more" class="btn">Load more</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  `;
+
+  // hook filters and initial populate
+  populateFilterOptions();
+  hookHomeEvents();
+  applyFiltersAndRender();
+}
