@@ -100,3 +100,34 @@ function setTheme(t){
     btn.textContent = t === 'dark' ? 'Light' : 'Dark';
   }
 }
+
+/* ----------------- Views ------------------ */
+
+function showFullScreenSkeleton(){
+  app.innerHTML = `
+    <section class="page">
+      <div class="container">
+        <div class="hero">
+          <div style="display:flex;gap:16px;align-items:center;">
+            <div style="width:48%;"><div class="skeleton" style="height:88px;border-radius:12px"></div></div>
+            <div style="width:48%"><div class="skeleton" style="height:88px;border-radius:12px"></div></div>
+          </div>
+        </div>
+
+        <div class="jobs-wrap" style="margin-top:18px">
+          <aside class="filters"><div class="skeleton" style="height:240px;border-radius:12px"></div></aside>
+          <section style="flex:1">
+            <div class="jobs-grid">
+              ${Array.from({length:PAGE_SIZE}).map(()=>`<div class="job-card"><div class="skeleton" style="height:16px;width:60%"></div><div style="height:8px"></div><div class="skeleton" style="height:12px;width:90%"></div><div style="height:10px"></div><div class="skeleton" style="height:12px;width:40%"></div></div>`).join('')}
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function hideFullScreenSkeleton(){
+  // noop; subsequent render will replace content
+}
+
