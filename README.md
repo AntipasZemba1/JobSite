@@ -1,111 +1,151 @@
-# Klick
+# Klick Jobs
 
-Klick is a modern, clean, and accessible front-end prototype for browsing job listings. It showcases a responsive job board interface built with plain **HTML**, **CSS**, and **JavaScript**, featuring dynamic job loading, search, filters, sorting, and modal details — all without a backend.
+**Klick Jobs** is a modern, lightweight job board front-end prototype built with plain HTML, CSS, and JavaScript. It features client-side routing, offline caching, advanced filtering, local persistence for saved jobs, and theme toggling (light/dark mode).
+
+---
+
+## Table of Contents
+
+- [Demo](#demo)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Customization](#customization)
+- [Accessibility](#accessibility)
+- [Future Improvements](#future-improvements)
+- [License](#license)
 
 ---
 
 ## Demo
 
-![Klick Screenshot](./screenshot.png)  
-*Note: Add a screenshot of the project here for visual reference.*
+_This project can be run locally by serving the files or deployed to any static hosting._
 
 ---
 
 ## Features
 
-- Responsive layout with modern UI design
-- Browse curated developer, design, and remote job roles
-- Dynamic job listings loaded from a JSON data file
-- Search jobs by keywords (title, company, description, tags)
-- Filter jobs by location and job type
-- Sort jobs by newest posting or alphabetical order
-- Clear all filters with a single click
-- View detailed job descriptions in a modal dialog
-- Accessible navigation with keyboard support and ARIA attributes
-- Mobile-friendly navigation toggle
+- **Job Listings:** Browse curated job roles with essential information.
+- **Search & Filtering:** Filter jobs by keyword, location, job type, tags, and sort results.
+- **Pagination:** Load jobs in batches for a faster and cleaner UI.
+- **Saved Jobs:** Save and unsave jobs with persistence using `localStorage`.
+- **Job Detail View:** View detailed job information and easily apply (demo flow).
+- **Dark Mode:** Toggle between light and dark themes, with preference saved across sessions.
+- **Client-side Routing:** Navigate seamlessly between Home, Saved Jobs, Job Details, and About pages without page reloads.
+- **Accessibility:** Semantic HTML and ARIA attributes for screen readers and keyboard navigation.
+- **Offline Support:** Service worker registration for offline caching (assumed from the code comments).
+- **Responsive Design:** Mobile-friendly navigation and layout.
 
 ---
 
 ## Technologies Used
 
-- **HTML5** — semantic structure and accessibility
-- **CSS3** — modern styling with CSS variables, grid, and flexbox
-- **JavaScript (ES6+)** — dynamic UI updates, filtering, sorting, and modal management
-- Google Fonts (Inter and Poppins)
-
----
-
-## Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/AntipasZemba1/JobSite
-   cd Klick
-````
-
-2. Open `index.html` in your browser.
-
-> No build tools or backend required — this is a static front-end prototype.
+- **HTML5** and **CSS3** (with Google Fonts: Inter & Poppins)
+- **Vanilla JavaScript (ES Modules)**
+- **LocalStorage** for persistence
+- **Fetch API** for data retrieval
+- **Service Worker** (registration code present) for offline caching
+- Client-side routing using `window.location.hash`
 
 ---
 
 ## Project Structure
 
 ```
-Klick/
-│
-├── index.html         # Main HTML page
+
+/ (root)
+├── index.html          # Main HTML page
 ├── css/
-│   └── style.css      # Stylesheet
+│   └── style.css       # Stylesheet
 ├── js/
-│   └── main.js        # JavaScript logic for filtering and UI
+│   └── main.js         # Main JavaScript logic (module)
 ├── data/
-│   └── jobs.json      # Sample job listings data
-└── README.md          # This file
+│   └── jobs.json       # JSON file with job listings data
+└── README.md           # Project documentation
+
+````
+
+---
+
+## Getting Started
+
+### Installation
+
+1. Clone the repository or download the source files.
+
+```bash
+git clone https://github.com/AntipasZemba1/JobSite/
+cd JobSite
+````
+
+2. Serve the files with a local server (recommended):
+
+```bash
+# Python 3
+python3 -m http.server 8000
 ```
+
+3. Open your browser and navigate to `http://localhost:8000`.
 
 ---
 
 ## Usage
 
-* Use the search bar to find jobs by keywords.
-* Filter jobs by location and type using the dropdowns.
-* Sort jobs by newest or alphabetical order.
-* Click **Clear** to reset all filters.
-* Click **View Details** to see a job description in a modal.
-* Click **Apply** to open the job modal for applying (demo alert only).
+* **Browse jobs:** View available jobs on the homepage.
+* **Filter jobs:** Use search, location, type, and sorting dropdowns.
+* **Save jobs:** Click the **Save** button on job cards or job details to bookmark jobs.
+* **View saved jobs:** Navigate to the **Saved** page from the top navigation.
+* **View job details:** Click **View** on any job card to see detailed information.
+* **Apply for jobs:** The **Apply** button simulates a job application flow.
+* **Toggle theme:** Click the **Mode** button in the header to switch between light and dark themes.
+* **Navigate:** Use the top navigation or browser back/forward buttons for seamless routing.
+
+---
+
+## Customization
+
+* **Jobs data:** Modify `data/jobs.json` to add or update job listings.
+* **Styling:** Update `css/style.css` to change visual appearance.
+* **Fonts:** Change fonts by editing the Google Fonts link in `index.html`.
+* **Pagination size:** Adjust the `PAGE_SIZE` constant in `js/main.js` for how many jobs show per page.
+* **Theme:** Modify or extend theme colors via CSS variables in `style.css`.
 
 ---
 
 ## Accessibility
 
-* Semantic HTML5 elements and ARIA attributes ensure screen reader compatibility.
-* Keyboard navigable menu and modal dialogs.
-* Responsive design adapts for mobile and desktop users.
+* Semantic HTML elements and ARIA roles are used for navigation and dialogs.
+* Keyboard-friendly navigation and focus management.
+* Contrast-optimized color schemes for light/dark modes.
+* Live regions announce job list updates for screen readers.
 
 ---
 
-## Contributing
+## Future Improvements
 
-This is a prototype project; feel free to fork and extend it by adding:
-
-* Backend integration for live job data
-* User authentication and job application tracking
-* Enhanced filtering and sorting options
-* Additional UI/UX improvements
-
-Please open issues or pull requests for suggestions or improvements.
+* Implement backend API integration for live job data.
+* Add user authentication for persistent saved jobs across devices.
+* Enhance job application flow with real submission.
+* Improve offline capabilities with a full-featured service worker.
+* Add internationalization/localization support.
+* Include unit and integration tests.
 
 ---
 
 ## License
 
-© 2025 Antipas Zemba
+Copyright © 2025 Antipas Zemba. All Rights Reserved.
 
 ---
 
-## Contact
+## Acknowledgments
 
-For questions or feedback, please reach out via the contact form on the site or email
+* Inspired by common job board UIs and front-end prototyping best practices.
+* Fonts provided by Google Fonts ([Inter](https://fonts.google.com/specimen/Inter), [Poppins](https://fonts.google.com/specimen/Poppins)).
 
+---
+
+If you'd like, I can help you generate a minimal `jobs.json` example or further polish the README. Just let me know!
+```
