@@ -422,3 +422,30 @@ function applyFiltersAndRender(){
 
   renderActiveChips();
 }
+
+function renderCardHtml(job){
+  return `
+    <div class="job-card" role="listitem" aria-label="${escapeHtml(job.title)} at ${escapeHtml(job.company)}">
+      <div>
+        <h3>${escapeHtml(job.title)}</h3>
+        <div class="job-meta">
+          <span class="muted">${escapeHtml(job.company)}</span>
+          <span>•</span>
+          <span class="muted">${escapeHtml(job.location)}</span>
+          <span>•</span>
+          <span class="tag" data-tag="${escapeHtml((job.type || '').toString())}">${escapeHtml(job.type)}</span>
+        </div>
+        <p class="job-desc">${escapeHtml(truncate(job.description, 140))}</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px">
+          ${(job.tags||[]).slice(0,4).map(t => `<span class="tag" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</span>`).join('')}
+        </div>
+      </div>
+
+      <div class="job-actions">
+        <button class="btn" data-action="view" data-id="${escapeHtml(job.id)}">View</button>
+        <button class="btn primary" data-action="apply" data-id="${escapeHtml(job.id)}" onclick="alert('Demo: apply flow')">Apply</button>
+        <button class="btn" data-action="save" data-id="${escapeHtml(job.id)}">${isSaved(job.id) ? 'Unsave' : 'Save'}</button>
+      </div>
+    </div>
+  `;
+}
