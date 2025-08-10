@@ -107,10 +107,5 @@ Please open issues or pull requests for suggestions or improvements.
 
 ## Contact
 
-For questions or feedback, please reach out via the contact form on the site or email [Email Me](mailto:antipasnzeba@gmail.com).
+For questions or feedback, please reach out via the contact form on the site or email
 
----
-
-*JobFinder is a demo project and does not offer real job listings or hiring services.*
-
-```
