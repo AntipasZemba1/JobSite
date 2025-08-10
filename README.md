@@ -139,8 +139,3 @@ python3 -m http.server 8000
 Copyright © 2025 Antipas Zemba. All Rights Reserved.
 
 ---
-
-## Acknowledgments
-
-* Inspired by common job board UIs and front-end prototyping best practices.
-* Fonts provided by Google Fonts ([Inter](https://fonts.google.com/specimen/Inter), [Poppins](https://fonts.google.com/specimen/Poppins)).
