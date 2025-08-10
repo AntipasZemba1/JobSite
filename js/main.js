@@ -287,3 +287,61 @@ function renderSavedPage(){
     });
   });
 }
+
+/* --------- Job detail route ---------- */
+function renderJobPage(id){
+  const job = JOBS.find(j => j.id === id);
+  if (!job) {
+    app.innerHTML = `<section class="page"><div class="container"><h2>Job not found</h2><a class="btn" href="#/">Back</a></div></section>`;
+    return;
+  }
+
+  app.innerHTML = `
+    <section class="page">
+      <div class="container">
+        <div style="display:flex;justify-content:space-between;align-items:start;gap:18px">
+          <div style="flex:1;max-width:740px">
+            <h1>${escapeHtml(job.title)}</h1>
+            <div class="muted">${escapeHtml(job.company)} • ${escapeHtml(job.location)} • <span class="tag">${escapeHtml(job.type)}</span></div>
+            <div style="margin-top:16px">
+              <p>${escapeHtml(job.description)}</p>
+            </div>
+
+            <div style="margin-top:20px;display:flex;gap:10px">
+              <button id="save-toggle" class="btn">${isSaved(job.id) ? 'Unsave' : 'Save'}</button>
+              <button id="apply-btn" class="btn primary">Apply (demo)</button>
+              <a class="btn" href="#/">Back to listings</a>
+            </div>
+          </div>
+
+          <aside style="width:260px">
+            <div class="card" style="background:var(--card);padding:14px;border-radius:12px;box-shadow:var(--shadow)">
+              <h3 class="small">Job details</h3>
+              <p class="muted small">Salary: ${escapeHtml(job.salary || '—')}</p>
+              <p class="muted small">Posted: ${new Date(job.postedAt).toLocaleDateString()}</p>
+              <div style="margin-top:10px">
+                <strong class="small">Tags</strong>
+                <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">${(job.tags||[]).map(t=>`<span class="tag" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</span>`).join('')}</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  `;
+
+  // hooks
+  byId('save-toggle').addEventListener('click', () => {
+    toggleSave(job.id);
+    byId('save-toggle').textContent = isSaved(job.id) ? 'Unsave' : 'Save';
+  });
+  byId('apply-btn').addEventListener('click', () => alert('This is a demo. Application would be submitted to the employer in a real app.'));
+  // tag clicks
+  document.querySelectorAll('[data-tag]').forEach(el => el.addEventListener('click', (e)=>{
+    const t = e.currentTarget.dataset.tag;
+    activeTagFilters.add(t);
+    location.hash = '/';
+    // when route changes, ensure filters reflect
+    setTimeout(()=>{ /* give router time */ renderHomePage(); document.querySelector('#search')?.focus(); renderActiveChips(); applyFiltersAndRender(); }, 80);
+  }));
+}
