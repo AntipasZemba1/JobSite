@@ -40,7 +40,7 @@ JobFinder is a modern, clean, and accessible front-end prototype for browsing jo
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/jobfinder.git
+   git clone https://github.com/AntipasZemba1/JobSite
    cd jobfinder
 ````
 
