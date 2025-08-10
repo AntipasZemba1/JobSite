@@ -1,12 +1,12 @@
-# JobFinder
+# Klick
 
-JobFinder is a modern, clean, and accessible front-end prototype for browsing job listings. It showcases a responsive job board interface built with plain **HTML**, **CSS**, and **JavaScript**, featuring dynamic job loading, search, filters, sorting, and modal details — all without a backend.
+Klick is a modern, clean, and accessible front-end prototype for browsing job listings. It showcases a responsive job board interface built with plain **HTML**, **CSS**, and **JavaScript**, featuring dynamic job loading, search, filters, sorting, and modal details — all without a backend.
 
 ---
 
 ## Demo
 
-![JobFinder Screenshot](./screenshot.png)  
+![Klick Screenshot](./screenshot.png)  
 *Note: Add a screenshot of the project here for visual reference.*
 
 ---
@@ -41,7 +41,7 @@ JobFinder is a modern, clean, and accessible front-end prototype for browsing jo
 
    ```bash
    git clone https://github.com/AntipasZemba1/JobSite
-   cd jobfinder
+   cd Klick
 ````
 
 2. Open `index.html` in your browser.
@@ -53,7 +53,7 @@ JobFinder is a modern, clean, and accessible front-end prototype for browsing jo
 ## Project Structure
 
 ```
-jobfinder/
+Klick/
 │
 ├── index.html         # Main HTML page
 ├── css/
