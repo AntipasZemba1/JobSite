@@ -144,8 +144,3 @@ Copyright © 2025 Antipas Zemba. All Rights Reserved.
 
 * Inspired by common job board UIs and front-end prototyping best practices.
 * Fonts provided by Google Fonts ([Inter](https://fonts.google.com/specimen/Inter), [Poppins](https://fonts.google.com/specimen/Poppins)).
-
----
-
-If you'd like, I can help you generate a minimal `jobs.json` example or further polish the README. Just let me know!
-```
