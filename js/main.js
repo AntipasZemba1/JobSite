@@ -479,3 +479,28 @@ function renderActiveChips(){
     });
   });
 }
+
+
+/* ----------------- Saved / localStorage helpers ------------------ */
+function getSavedJobs(){
+  const ids = JSON.parse(localStorage.getItem(LS_SAVED) || '[]');
+  return JOBS.filter(j => ids.includes(j.id));
+}
+function isSaved(id){
+  const ids = JSON.parse(localStorage.getItem(LS_SAVED) || '[]');
+  return ids.includes(id);
+}
+function toggleSave(id){
+  const ids = JSON.parse(localStorage.getItem(LS_SAVED) || '[]');
+  if (ids.includes(id)) {
+    const n = ids.filter(x => x !== id);
+    localStorage.setItem(LS_SAVED, JSON.stringify(n));
+  } else {
+    ids.push(id);
+    localStorage.setItem(LS_SAVED, JSON.stringify(ids));
+  }
+}
+function removeSavedJob(id){
+  const ids = JSON.parse(localStorage.getItem(LS_SAVED) || '[]').filter(x => x !== id);
+  localStorage.setItem(LS_SAVED, JSON.stringify(ids));
+}
