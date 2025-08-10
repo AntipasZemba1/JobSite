@@ -522,3 +522,15 @@ function debounce(fn, wait=150){
     t = setTimeout(()=> fn.apply(this,args), wait);
   };
 }
+
+/* ----------------- Service worker registration ------------------ */
+async function tryRegisterSW(){
+  if ('serviceWorker' in navigator){
+    try {
+      await navigator.serviceWorker.register('./sw.js');
+      console.log('Service Worker registered');
+    } catch (e) {
+      console.warn('Service Worker registration failed', e);
+    }
+  }
+}
