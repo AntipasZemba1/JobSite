@@ -35,3 +35,35 @@ async function fetchJobs(){
   const res = await fetch(DATA_PATH);
   return res.json();
 }
+
+// Router
+async function renderRouter(){
+  const hash = location.hash.replace(/^#/, '') || '/';
+  if (hash.startsWith('/job/')) {
+    // job detail page
+    const id = hash.split('/')[2];
+    await ensureJobs();
+    renderJobPage(id);
+  } else if (hash === '/saved') {
+    await ensureJobs();
+    renderSavedPage();
+  } else if (hash === '/about') {
+    renderAboutPage();
+  } else {
+    await ensureJobs();
+    renderHomePage();
+  }
+}
+
+async function ensureJobs(){
+  if (JOBS.length) return;
+  showFullScreenSkeleton();
+  try {
+    JOBS = await fetchJobs();
+  } catch (e){
+    console.error('Failed to load jobs', e);
+    JOBS = [];
+  } finally {
+    hideFullScreenSkeleton();
+  }
+}
