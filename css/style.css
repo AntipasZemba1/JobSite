@@ -165,3 +165,8 @@ body{
 .job-actions{margin-top:auto;display:flex;gap:8px;align-items:center}
 .tag{display:inline-block;padding:6px 8px;border-radius:999px;border:1px solid rgba(15,23,42,0.06);font-size:0.82rem;color:var(--muted);cursor:pointer}
 .tag:hover{opacity:0.9}
+
+/* skeleton */
+.skeleton{background:linear-gradient(90deg, rgba(0,0,0,0.04) 25%, rgba(0,0,0,0.06) 37%, rgba(0,0,0,0.04) 63%);background-size:400% 100%;animation:shimmer 1.6s linear infinite;border-radius:8px}
+@keyframes shimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}
+
