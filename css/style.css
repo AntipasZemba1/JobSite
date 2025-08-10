@@ -140,3 +140,28 @@ body{
   color:var(--text);
 }
 .filter-actions{display:flex; gap:8px; margin-top:8px}
+
+
+/* active filter chips */
+.active-chips{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px}
+.chip{padding:6px 10px;border-radius:999px;background:rgba(124,58,237,0.08);font-weight:600;font-size:0.85rem;color:var(--accent-2);cursor:pointer;border:1px solid rgba(124,58,237,0.06)}
+.chip--tag{background:transparent;border:1px dashed rgba(124,58,237,0.06);color:var(--muted)}
+
+/* jobs grid */
+.jobs-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
+.job-card{
+  background:var(--card);
+  border-radius:12px;
+  padding:14px;
+  box-shadow:var(--shadow);
+  transition:transform .18s ease, box-shadow .18s;
+  display:flex;flex-direction:column;gap:10px;
+  min-height:120px;
+}
+.job-card:hover{transform:translateY(-6px); box-shadow:0 16px 40px rgba(12,18,29,0.12)}
+.job-card h3{margin:0;font-size:1.05rem}
+.job-meta{display:flex;gap:8px;color:var(--muted);font-size:0.9rem;align-items:center}
+.job-desc{color:var(--muted);margin:6px 0 10px;font-size:0.95rem}
+.job-actions{margin-top:auto;display:flex;gap:8px;align-items:center}
+.tag{display:inline-block;padding:6px 8px;border-radius:999px;border:1px solid rgba(15,23,42,0.06);font-size:0.82rem;color:var(--muted);cursor:pointer}
+.tag:hover{opacity:0.9}
