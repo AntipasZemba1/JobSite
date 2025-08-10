@@ -206,3 +206,15 @@ function renderHomePage(){
   hookHomeEvents();
   applyFiltersAndRender();
 }
+
+function populateFilterOptions(){
+  const locSel = byId('filter-location');
+  const typeSel = byId('filter-type');
+
+  // populate unique options from JOBS
+  const locs = Array.from(new Set(JOBS.map(j => j.location))).sort();
+  locSel.innerHTML = `<option value="">Anywhere</option>` + locs.map(l => `<option value="${escapeHtml(l)}">${escapeHtml(l)}</option>`).join('');
+
+  const types = Array.from(new Set(JOBS.map(j => j.type))).sort();
+  typeSel.innerHTML = `<option value="">Any</option>` + types.map(t => `<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`).join('');
+}
