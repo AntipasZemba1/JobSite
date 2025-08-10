@@ -449,3 +449,33 @@ function renderCardHtml(job){
     </div>
   `;
 }
+
+function renderActiveChips(){
+  const container = byId('active-chips');
+  if (!container) return;
+  const chips = [];
+
+  if (searchQ) chips.push({type:'q', label:`"${searchQ}"`});
+  if (locationFilter) chips.push({type:'loc', label: locationFilter});
+  if (typeFilter) chips.push({type:'type', label: typeFilter});
+  activeTagFilters.forEach(t => chips.push({type:'tag', label: t}));
+
+  if (!chips.length) {
+    container.innerHTML = `<div class="muted small">No active filters</div>`;
+    return;
+  }
+
+  container.innerHTML = chips.map(c => `<div class="chip" data-chip-type="${c.type}" data-chip="${escapeHtml(c.label)}">${escapeHtml(c.label)} <span style="opacity:0.7;margin-left:6px">✕</span></div>`).join('');
+  container.querySelectorAll('.chip').forEach(el => {
+    el.addEventListener('click', (e) => {
+      const t = e.currentTarget.dataset['chipType'];
+      const val = e.currentTarget.dataset['chip'];
+      if (t === 'q') { searchQ = ''; byId('search').value=''; }
+      else if (t === 'loc') { locationFilter = ''; byId('filter-location').value=''; }
+      else if (t === 'type') { typeFilter = ''; byId('filter-type').value=''; }
+      else if (t === 'tag') { activeTagFilters.delete(val); }
+      visibleCount = PAGE_SIZE;
+      applyFiltersAndRender();
+    });
+  });
+}
