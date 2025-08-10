@@ -118,3 +118,25 @@ body{
   gap:24px;
   align-items:start;
 }
+
+/* filters pane */
+.filters{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:16px;
+  box-shadow:var(--shadow);
+  position:sticky;
+  top:84px;
+}
+.filter-group{margin-bottom:12px}
+.filter-group label{display:block;font-weight:600;margin-bottom:8px;font-size:0.9rem}
+.input, select, .chip-input{
+  width:100%;
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid rgba(15,23,42,0.06);
+  background:transparent;
+  font-size:0.95rem;
+  color:var(--text);
+}
+.filter-actions{display:flex; gap:8px; margin-top:8px}
