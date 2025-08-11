@@ -140,7 +140,7 @@ function renderHomePage(){
         <div class="hero">
           <div class="hero-inner">
             <div class="hero-content">
-              <h1>Find your next great job</h1>
+              <h1>Find your next career job</h1>
               <p class="lead muted">Curated roles. Fast filtering. Save your favorites.</p>
             </div>
             <div>
@@ -352,7 +352,7 @@ function renderAboutPage(){
     <section class="page">
       <div class="container">
         <h1>About JobFinder</h1>
-        <p class="muted">This is an advanced front-end prototype of a job board built with plain HTML/CSS/JS. It demonstrates filtering, local persistence, offline caching, and client-side routing.</p>
+        <p class="muted">This is a front-end sample of a job board built with plain HTML/CSS/JS. It demonstrates filtering, local persistence, offline caching, and client-side routing.</p>
         <p style="margin-top:18px"><a class="btn" href="#/">Browse jobs</a></p>
       </div>
     </section>
