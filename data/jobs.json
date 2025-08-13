@@ -9,7 +9,7 @@
     "salary": "80k–110k",
     "description": "BrightWave is seeking a skilled Frontend Developer to craft high-quality, accessible, and responsive web experiences. In this role, you will collaborate closely with designers and backend engineers to build user interfaces that delight and perform. Responsibilities include designing reusable components, writing clean and maintainable JavaScript, HTML, and CSS, implementing best practices for accessibility, and conducting thorough testing. Proficiency in modern JavaScript frameworks is required, with React experience being a strong plus. You should be comfortable working in an Agile environment, participating in code reviews, and contributing to a positive, collaborative engineering culture.",
     "tags": ["javascript", "react", "frontend"],
-    "applyLink": "https://careers.brightwave.example/apply/frontend-developer"
+    "applyLink": "https://jobs.brightwave.com/apply/84723?utm_source=jobboard&utm_campaign=frontenddev"
   },
   {
     "id": "j-002",
@@ -21,7 +21,7 @@
     "salary": "70k–95k",
     "description": "Sketchable is looking for a creative and detail-oriented Product Designer to create intuitive and engaging interfaces for both web and mobile platforms. You will work from concept to delivery, producing wireframes, prototypes, and high-fidelity designs. The role requires close collaboration with product managers, developers, and stakeholders to ensure designs meet both user needs and business goals. A strong portfolio demonstrating your UX and visual design skills is essential. Experience with design tools such as Figma, Sketch, or Adobe XD is preferred, along with a solid understanding of usability principles and accessibility standards.",
     "tags": ["design", "figma", "ux"],
-    "applyLink": "https://jobs.sketchable.example/apply/product-designer"
+    "applyLink": "https://apply.sketchable.com/jobs/19384?ref=contractboard"
   },
   {
     "id": "j-003",
@@ -33,7 +33,7 @@
     "salary": "120k–160k",
     "description": "CloudCore is seeking a Backend Engineer to design, build, and maintain scalable, high-performance backend services. You will architect APIs, manage data storage solutions, and ensure system reliability. This role requires expertise in Node.js or Go, experience with relational and non-relational databases, and a strong understanding of distributed systems. You will collaborate closely with frontend teams to integrate services seamlessly, implement security best practices, and optimize performance. Familiarity with cloud infrastructure (AWS, GCP, or Azure) and containerized deployments is highly valued.",
     "tags": ["node", "go", "backend"],
-    "applyLink": "https://careers.cloudcore.example/apply/backend-engineer"
+    "applyLink": "https://careers.cloudcore.com/jobs/58192/apply?utm_medium=website&utm_campaign=backendeng"
   },
   {
     "id": "j-004",
@@ -45,7 +45,7 @@
     "salary": "60k–100k",
     "description": "Arcadia is hiring a part-time Full Stack Engineer to help deliver product features across the stack. You will work on everything from user-facing interfaces to backend APIs and deployments. The role involves collaborating with designers to build engaging frontends using JavaScript, HTML, and CSS, while also contributing to backend services in Node.js. You should be comfortable deploying and monitoring applications, writing tests, and participating in code reviews. This position offers flexibility, autonomy, and the opportunity to make a significant impact on a small, agile team.",
     "tags": ["fullstack", "remote"],
-    "applyLink": "https://jobs.arcadia.example/apply/fullstack-engineer"
+    "applyLink": "https://jobs.arcadia.com/apply/40329?ref=remoteok"
   },
   {
     "id": "j-005",
@@ -57,7 +57,7 @@
     "salary": "110k–150k",
     "description": "Insightly is seeking a Data Scientist to transform product data into actionable insights and predictive models. You will design and implement machine learning algorithms, run experiments, and collaborate with engineers to deploy models into production. Key responsibilities include data exploration, feature engineering, model selection, and performance tuning. You should have strong Python skills, experience with libraries such as scikit-learn or TensorFlow, and a solid understanding of statistics. Experience with SQL and big data platforms (Spark, BigQuery) is a plus. This role is ideal for someone passionate about solving complex problems and driving data-informed decisions.",
     "tags": ["python", "ml", "data"],
-    "applyLink": "https://careers.insightly.example/apply/data-scientist"
+    "applyLink": "https://careers.insightly.com/job/74291/apply?utm_source=careerpage&utm_medium=referral"
   },
   {
     "id": "j-006",
@@ -69,7 +69,7 @@
     "salary": "115k–145k",
     "description": "ScaleLine is looking for a DevOps Engineer to design, implement, and manage robust CI/CD pipelines and scalable cloud infrastructure. You will be responsible for automating deployments, monitoring systems, and ensuring the security and reliability of production environments. Required skills include expertise with Kubernetes, Terraform, and cloud providers such as AWS or GCP. The ideal candidate will have a strong background in scripting, configuration management, and infrastructure as code, along with a proactive approach to problem-solving in complex systems.",
     "tags": ["devops", "k8s", "terraform"],
-    "applyLink": "https://jobs.scaleline.example/apply/devops-engineer"
+    "applyLink": "https://jobs.scaleline.com/view/68510/apply?utm_campaign=hiring2025"
   },
   {
     "id": "j-007",
@@ -81,7 +81,7 @@
     "salary": "100k–140k",
     "description": "PocketWorks is seeking an experienced iOS Engineer to design, develop, and maintain feature-rich mobile applications. You will work closely with product managers and designers to deliver high-quality, user-focused experiences. Proficiency in Swift and the iOS SDK is required, along with knowledge of design patterns, mobile performance optimization, and testing frameworks. The ideal candidate will have experience integrating with RESTful APIs, working with offline storage, and delivering polished UI interactions.",
     "tags": ["ios", "swift", "mobile"],
-    "applyLink": "https://careers.pocketworks.example/apply/ios-engineer"
+    "applyLink": "https://careers.pocketworks.com/jobs/38217/apply?utm_source=homepage"
   },
   {
     "id": "j-008",
@@ -93,7 +93,7 @@
     "salary": "60k–85k",
     "description": "TestHive is seeking a QA Automation Engineer to ensure product quality through robust automated testing. You will design, develop, and maintain automated test suites for web and mobile applications, work closely with developers to identify and resolve issues, and contribute to continuous integration workflows. Required skills include experience with automation frameworks (such as Selenium, Cypress, or Playwright), scripting languages, and version control. Strong problem-solving abilities and a detail-oriented mindset are essential.",
     "tags": ["qa", "automation", "testing"],
-    "applyLink": "https://jobs.testhive.example/apply/qa-automation-engineer"
+    "applyLink": "https://jobs.testhive.com/post/57183/apply?utm_source=jobboard"
   },
   {
     "id": "j-009",
@@ -105,7 +105,7 @@
     "salary": "150k–200k",
     "description": "NovaTech is seeking an experienced Engineering Manager to lead and mentor a team of software engineers. You will oversee roadmap execution, manage resource allocation, and foster a high-performance engineering culture. This role involves close collaboration with product management, setting technical direction, conducting regular 1:1s, and driving hiring efforts. A successful candidate will have a strong technical background, proven leadership experience, and excellent communication skills to align engineering goals with business objectives.",
     "tags": ["management", "leadership"],
-    "applyLink": "https://careers.novatech.example/apply/engineering-manager"
+    "applyLink": "https://careers.novatech.com/jobs/89642/apply?ref=linkedin"
   },
   {
     "id": "j-010",
@@ -117,6 +117,6 @@
     "salary": "95k–130k",
     "description": "Shieldly is hiring a Security Analyst to safeguard our systems and data against threats. You will monitor security alerts, review and improve security controls, conduct audits, and respond to incidents. The role requires strong analytical skills, familiarity with security tools and frameworks, and knowledge of threat modeling and risk assessment. You will collaborate with engineering and IT teams to implement best practices, ensure compliance, and drive security awareness across the organization.",
     "tags": ["security", "infosec"],
-    "applyLink": "https://jobs.shieldly.example/apply/security-analyst"
+    "applyLink": "https://jobs.shieldly.com/apply/10398?utm_medium=jobsite"
   }
 ]
